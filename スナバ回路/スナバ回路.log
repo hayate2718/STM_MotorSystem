@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.25)  27 AUG 2021 20:48
+This is e-pTeX, Version 3.141592653-p3.9.0-210218-2.6 (utf8.sjis) (TeX Live 2021/W32TeX) (preloaded format=platex 2021.7.25)  27 AUG 2021 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,19 +356,16 @@ File: snb.jpg Graphic file (type bmp)
  [1
 
 ] [2] [3] (./スナバ回路.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `スナバ回路.out' has not changed.
 (rerunfilecheck)             Checksum: CA5748F2944DBA8378C7550A988A1D1E;140.
  ) 
 Here is how much of TeX's memory you used:
  8816 strings out of 479466
  128073 string characters out of 5873881
- 446742 words of memory out of 5000000
+ 446740 words of memory out of 5000000
  26413 multiletter control sequences out of 15000+600000
  414255 words of font info for 69 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  71i,11n,77p,556b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on スナバ回路.dvi (3 pages, 14264 bytes).
+Output written on スナバ回路.dvi (3 pages, 14256 bytes).

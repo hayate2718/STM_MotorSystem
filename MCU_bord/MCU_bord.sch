@@ -5483,6 +5483,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R_I1" library="user_rcl" deviceset="R_SHUGOU" device="2"/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5608,6 +5609,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="+3V6" gate="G$1" x="180.34" y="111.76" smashed="yes">
 <attribute name="VALUE" x="177.8" y="106.68" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="+3V7" gate="G$1" x="-83.82" y="58.42" smashed="yes">
+<attribute name="VALUE" x="-86.36" y="53.34" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5699,17 +5703,8 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="53.34" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
 <label x="12.7" y="50.8" size="1.778" layer="95" rot="R180"/>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="25.4" y1="50.8" x2="17.78" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
 <junction x="25.4" y="50.8"/>
-<pinref part="U$2" gate="G$1" pin="PIN2"/>
-<wire x1="17.78" y1="50.8" x2="12.7" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="33.02" x2="17.78" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="35.56" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="C8" gate="G$1" pin="1"/>
-<wire x1="20.32" y1="35.56" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="35.56" x2="17.78" y2="50.8" width="0.1524" layer="91"/>
-<junction x="17.78" y="35.56"/>
-<junction x="17.78" y="50.8"/>
 </segment>
 <segment>
 <pinref part="C7" gate="G$1" pin="1"/>
@@ -5984,6 +5979,11 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="185.42" y1="104.14" x2="185.42" y2="101.6" width="0.1524" layer="91"/>
 <junction x="185.42" y="104.14"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="P$3"/>
+<pinref part="+3V7" gate="G$1" pin="+3V3"/>
+<wire x1="-83.82" y1="50.8" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$7" class="0">
 <segment>
@@ -6021,8 +6021,17 @@ Source: AVX .. aphvc.pdf</description>
 <net name="NRST" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="PIN4_NRST"/>
-<wire x1="53.34" y1="53.34" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="53.34" x2="17.78" y2="53.34" width="0.1524" layer="91"/>
 <label x="12.7" y="53.34" size="1.778" layer="95" rot="R180"/>
+<pinref part="C8" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="53.34" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="35.56" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="35.56" x2="20.32" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="PIN2"/>
+<wire x1="17.78" y1="33.02" x2="17.78" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="35.56" x2="17.78" y2="53.34" width="0.1524" layer="91"/>
+<junction x="17.78" y="35.56"/>
+<junction x="17.78" y="53.34"/>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="P$12"/>
@@ -6107,13 +6116,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="U$1" gate="G$1" pin="PIN23"/>
 <wire x1="111.76" y1="58.42" x2="116.84" y2="58.42" width="0.1524" layer="91"/>
 <label x="116.84" y="58.42" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="T_VCC" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="P$3"/>
-<wire x1="-83.82" y1="50.8" x2="-83.82" y2="55.88" width="0.1524" layer="91"/>
-<label x="-83.82" y="55.88" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="B_CH" class="0">

@@ -66,6 +66,11 @@
 <wire x1="0" y1="54" x2="0" y2="0" width="0" layer="20"/>
 <text x="5.08" y="6.35" size="1.778" layer="21" rot="R90">0.hayate
 MotaDora_MCU</text>
+<text x="4.191" y="40.132" size="1.016" layer="21">CH_B
+5V
+CH_A
+CH_Z
+GND</text>
 </plain>
 <libraries>
 <library name="user_ic">

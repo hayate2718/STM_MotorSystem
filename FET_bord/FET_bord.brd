@@ -92,6 +92,8 @@
 <vertex x="35.56" y="11.43"/>
 <vertex x="34.798" y="11.43"/>
 </polygon>
+<text x="2.54" y="16.51" size="1.778" layer="22" rot="MR270">GND</text>
+<text x="2.54" y="35.56" size="1.778" layer="22" rot="MR270">V_bat</text>
 </plain>
 <libraries>
 <library name="user_ic">

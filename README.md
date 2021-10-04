@@ -18,3 +18,5 @@ VL逆接したら多分壊れるので気を付けてね。ダイオードつけ
 |PA12|CAN_TX|CAN_TX|
 |PB4|GPIO(OUTPUT)|DIR|
 |PB5|GPIO(OUTPUT)|COAST|
+
+# 結局スナバ回路つけなかった

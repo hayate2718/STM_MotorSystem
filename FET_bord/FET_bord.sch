@@ -6120,6 +6120,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDINT" device=""/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDINT" device=""/>
+<part name="VDD5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6435,6 +6436,9 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="GND7" gate="G$1" x="-292.1" y="48.26" smashed="yes">
 <attribute name="VALUE" x="-294.64" y="45.72" size="1.778" layer="96"/>
 </instance>
+<instance part="VDD5" gate="G$1" x="15.24" y="91.44" smashed="yes">
+<attribute name="VALUE" x="12.7" y="88.9" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6583,6 +6587,11 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="-60.96" y="30.48"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <junction x="-38.1" y="25.4"/>
+</segment>
+<segment>
+<pinref part="VDD5" gate="G$1" pin="VDD"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="15.24" y1="88.9" x2="15.24" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="M" class="0">
@@ -6968,10 +6977,6 @@ Source: AVX .. aphvc.pdf</description>
 <junction x="40.64" y="76.2"/>
 <wire x1="43.18" y1="76.2" x2="43.18" y2="78.74" width="0.1524" layer="91"/>
 <label x="43.18" y="78.74" size="1.778" layer="95"/>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="83.82" x2="35.56" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="83.82" x2="35.56" y2="76.2" width="0.1524" layer="91"/>
-<junction x="35.56" y="76.2"/>
 </segment>
 <segment>
 <pinref part="IC_3" gate="G$1" pin="VCC"/>

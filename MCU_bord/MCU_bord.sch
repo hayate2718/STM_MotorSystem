@@ -5444,6 +5444,66 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="user_leds">
+<packages>
+<package name="1608" urn="urn:adsk.eagle:footprint:23128/1" locally_modified="yes">
+<description>1608LED</description>
+<wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
+<wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
+<smd name="A" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<smd name="K" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
+<rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+<text x="-1.27" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.27" y="0.762" size="0.4064" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="LED">
+<wire x1="1.27" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.032" y1="-0.762" x2="-3.429" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="-1.905" y1="-1.905" x2="-3.302" y2="-3.302" width="0.1524" layer="94"/>
+<text x="3.556" y="-4.572" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="5.715" y="-4.572" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="K" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="A" x="0" y="2.54" visible="off" length="short" direction="pas" rot="R270"/>
+<polygon width="0.1524" layer="94">
+<vertex x="-3.429" y="-2.159"/>
+<vertex x="-3.048" y="-1.27"/>
+<vertex x="-2.54" y="-1.778"/>
+</polygon>
+<polygon width="0.1524" layer="94">
+<vertex x="-3.302" y="-3.302"/>
+<vertex x="-2.921" y="-2.413"/>
+<vertex x="-2.413" y="-2.921"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="1608LED" prefix="LED" uservalue="yes">
+<description>1608LED</description>
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="1608">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="K" pad="K"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5493,10 +5553,16 @@ Source: AVX .. aphvc.pdf</description>
 <part name="+3V6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="+3V7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="CON3" library="user_conector" deviceset="XH_5P" device=""/>
+<part name="R1" library="user_rcl" deviceset="R_REG" device="" value="120"/>
+<part name="LED1" library="user_leds" deviceset="1608LED" device=""/>
+<part name="R3" library="user_rcl" deviceset="R_REG" device="" value="1k"/>
+<part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="+3V8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="-45.72" y="43.18" size="1.778" layer="97">電源確認用色指定なし</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="81.28" y="53.34" smashed="yes">
@@ -5612,9 +5678,27 @@ Source: AVX .. aphvc.pdf</description>
 </instance>
 <instance part="+3V6" gate="G$1" x="180.34" y="111.76" smashed="yes"/>
 <instance part="+3V7" gate="G$1" x="-83.82" y="58.42" smashed="yes">
-<attribute name="VALUE" x="-86.36" y="53.34" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="-83.82" y="58.42" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="CON3" gate="G$1" x="-101.6" y="7.62" smashed="yes"/>
+<instance part="R1" gate="G$1" x="223.52" y="20.32" smashed="yes" rot="R90">
+<attribute name="NAME" x="222.0214" y="16.51" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="226.822" y="16.51" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED1" gate="G$1" x="-50.8" y="45.72" smashed="yes" rot="MR0">
+<attribute name="NAME" x="-54.356" y="41.148" size="1.778" layer="95" rot="MR90"/>
+<attribute name="VALUE" x="-56.515" y="41.148" size="1.778" layer="96" rot="MR90"/>
+</instance>
+<instance part="R3" gate="G$1" x="-50.8" y="58.42" smashed="yes" rot="MR270">
+<attribute name="NAME" x="-52.2986" y="62.23" size="1.778" layer="95" rot="MR270"/>
+<attribute name="VALUE" x="-47.498" y="62.23" size="1.778" layer="96" rot="MR270"/>
+</instance>
+<instance part="GND10" gate="1" x="-50.8" y="33.02" smashed="yes">
+<attribute name="VALUE" x="-53.34" y="30.48" size="1.778" layer="96"/>
+</instance>
+<instance part="+3V8" gate="G$1" x="-50.8" y="71.12" smashed="yes">
+<attribute name="VALUE" x="-53.34" y="66.04" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5747,8 +5831,13 @@ Source: AVX .. aphvc.pdf</description>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CANH"/>
-<wire x1="198.12" y1="22.86" x2="203.2" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="22.86" x2="200.66" y2="22.86" width="0.1524" layer="91"/>
 <label x="203.2" y="22.86" size="1.778" layer="95"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="200.66" y1="22.86" x2="203.2" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="25.4" x2="200.66" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="25.4" x2="200.66" y2="22.86" width="0.1524" layer="91"/>
+<junction x="200.66" y="22.86"/>
 </segment>
 </net>
 <net name="CAN_N" class="0">
@@ -5759,8 +5848,13 @@ Source: AVX .. aphvc.pdf</description>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="CANL"/>
-<wire x1="198.12" y1="17.78" x2="203.2" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="17.78" x2="200.66" y2="17.78" width="0.1524" layer="91"/>
 <label x="203.2" y="17.78" size="1.778" layer="95"/>
+<wire x1="200.66" y1="17.78" x2="203.2" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="17.78" x2="200.66" y2="15.24" width="0.1524" layer="91"/>
+<junction x="200.66" y="17.78"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="15.24" x2="223.52" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -5895,6 +5989,11 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="180.34" y1="60.96" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
 <junction x="180.34" y="60.96"/>
 </segment>
+<segment>
+<pinref part="LED1" gate="G$1" pin="K"/>
+<pinref part="GND10" gate="1" pin="GND"/>
+<wire x1="-50.8" y1="40.64" x2="-50.8" y2="35.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -5979,6 +6078,11 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="SW1" gate="G$1" pin="5"/>
 <wire x1="185.42" y1="101.6" x2="187.96" y2="101.6" width="0.1524" layer="91"/>
 <junction x="185.42" y="101.6"/>
+</segment>
+<segment>
+<pinref part="+3V8" gate="G$1" pin="+3V3"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="-50.8" y1="68.58" x2="-50.8" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="CAN_TX" class="0">
@@ -6191,6 +6295,13 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="187.96" y1="76.2" x2="175.26" y2="76.2" width="0.1524" layer="91"/>
 <junction x="187.96" y="76.2"/>
 <label x="175.26" y="76.2" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<wire x1="-50.8" y1="53.34" x2="-50.8" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

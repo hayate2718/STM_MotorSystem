@@ -6046,8 +6046,8 @@ Source: AVX .. aphvc.pdf</description>
 <part name="U$5" library="user_tr_fet_igbt" deviceset="FDC6305" device=""/>
 <part name="U$6" library="user_leds" deviceset="RGB_LED" device=""/>
 <part name="U$7" library="user_tr_fet_igbt" deviceset="FDC6305" device=""/>
-<part name="R_I1" library="user_rcl" deviceset="R_SHUGOU" device=""/>
-<part name="R_I2" library="user_rcl" deviceset="R_SHUGOU" device=""/>
+<part name="R_I1" library="user_rcl" deviceset="R_SHUGOU" device="" value="1k"/>
+<part name="R_I2" library="user_rcl" deviceset="R_SHUGOU" device="" value="1k"/>
 <part name="GNDI2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GNDI" device=""/>
 <part name="VDD4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="R_I3" library="user_rcl" deviceset="R_SHUGOU" device="2" value="10k"/>

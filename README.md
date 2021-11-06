@@ -1,5 +1,6 @@
 # STM_MotorSystem
 モーターシステム<br>
+MCU_bord_subは半導体不足でMCP2562のSOIC8pinパッケージがなかったとき用<br>
 VL逆接したら多分壊れるので気を付けてね。ダイオードつけるの忘れてたてへぺろリン<br>
 ファームウェアなどプログラム関係は[STM_MotorSystem_Programのwiki](https://github.com/hayate2718/STM_MotorSystem_Program/wiki)を参照
 
@@ -22,3 +23,4 @@ VL逆接したら多分壊れるので気を付けてね。ダイオードつけ
 |PB5|GPIO(OUTPUT)|COAST|
 
 ## 結局スナバ回路つけなかった
+
